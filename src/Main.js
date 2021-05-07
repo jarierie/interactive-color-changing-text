@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { gsap } from "gsap";
 
@@ -52,7 +52,7 @@ const Main = () => {
   const animation = (target) => {
     const tl = gsap.timeline();
     tl.to(ref.current.childNodes[target], {
-      color: colors[Math.floor(Math.random() * 4)],
+      color: colors[Math.floor(Math.random() * colors.length)],
     }).to(ref.current.childNodes[target], { color: "transparent", delay: 1.5 });
   };
 
